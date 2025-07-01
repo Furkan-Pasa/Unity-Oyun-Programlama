@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class MouseMovement : MonoBehaviour
 {
+    // Player objesini Inspector'dan atayacaðýz
+    public Transform playerBody;
+
     public float mouseSensitivity = 100f;
 
     float xRotation = 0f;
-    float YRotation = 0f;
+    // float YRotation = 0f;
 
     void Start()
     {
         //Locking the cursor to the middle of the screen and making it invisible
         Cursor.lockState = CursorLockMode.Locked;
+
     }
 
     void Update()
     {
+
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
@@ -27,10 +32,13 @@ public class MouseMovement : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
         //control rotation around y axis (Look up and down)
-        YRotation += mouseX;
+        //YRotation += mouseX;
 
         //applying both rotations
-        transform.localRotation = Quaternion.Euler(xRotation, YRotation, 0f);
+        // transform.localRotation = Quaternion.Euler(xRotation, YRotation, 0f);
+        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
+        // Player gövdesi saða-sola dönme (Y ekseni)
+        playerBody.Rotate(Vector3.up * mouseX);
     }
 }
