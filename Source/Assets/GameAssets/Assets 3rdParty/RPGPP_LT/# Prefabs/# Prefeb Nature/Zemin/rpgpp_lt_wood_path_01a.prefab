@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33892306296726494}
   - component: {fileID: 23355024993077614}
   - component: {fileID: -3875260204780661065}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: rpgpp_lt_wood_path_01a
   m_TagString: Untagged
   m_Icon: {fileID: 0}
