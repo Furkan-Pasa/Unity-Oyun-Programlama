@@ -233,10 +233,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5820959653070792002}
   - component: {fileID: 2922884151624095404}
-  - component: {fileID: 5218134836615378374}
-  - component: {fileID: 533736662783134173}
+  - component: {fileID: -524111347014089909}
+  - component: {fileID: -4293744307208019747}
+  - component: {fileID: -3041471555548906686}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player v1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285,7 +286,29 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5218134836615378374
+--- !u!64 &-524111347014089909
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5609813598171090237}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
+--- !u!114 &-4293744307208019747
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -294,19 +317,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 5609813598171090237}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51dbbe72e507423428621b0039c9cf4e, type: 3}
+  m_Script: {fileID: 11500000, guid: c4c041998aa414442baa4b6a085a728b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 2922884151624095404}
-  speed: 12
-  gravity: -19.62
-  jumpHeight: 3
-  groundCheck: {fileID: 4157729442147807624}
+  controller: {fileID: 0}
+  speed: 6
+  gravity: -50
+  jumpHeight: 2
+  groundCheck: {fileID: 0}
   groundDistance: 0.4
   groundMask:
     serializedVersion: 2
     m_Bits: 0
---- !u!114 &533736662783134173
+--- !u!114 &-3041471555548906686
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -315,10 +338,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5609813598171090237}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 984ff875d172b6e4491a81685395f8f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 84ef595e3310cb04d80ab351715579fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 200
+  mouseSensitivity: 100
 --- !u!1 &8351375301983501121
 GameObject:
   m_ObjectHideFlags: 0
