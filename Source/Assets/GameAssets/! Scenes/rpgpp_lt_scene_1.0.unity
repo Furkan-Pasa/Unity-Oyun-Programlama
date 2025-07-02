@@ -25544,21 +25544,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 126517070}
     m_Modifications:
-    - target: {fileID: 3124511599258285522, guid: a55a0c9e057bc994ea182b2668dbdccb, type: 3}
-      propertyPath: m_ReceiveGI
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3124511599258285522, guid: a55a0c9e057bc994ea182b2668dbdccb, type: 3}
-      propertyPath: m_StaticShadowCaster
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3484804037060006919, guid: a55a0c9e057bc994ea182b2668dbdccb, type: 3}
       propertyPath: m_Name
       value: rpgpp_lt_awning_standing_01b
-      objectReference: {fileID: 0}
-    - target: {fileID: 3484804037060006919, guid: a55a0c9e057bc994ea182b2668dbdccb, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4257962555416202941, guid: a55a0c9e057bc994ea182b2668dbdccb, type: 3}
       propertyPath: m_LocalPosition.x

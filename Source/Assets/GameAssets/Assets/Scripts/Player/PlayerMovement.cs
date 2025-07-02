@@ -6,7 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
 
-    public float speed = 6f;
+    public float speed = 5f;
+    public float runSpeed = 10f;
     public float gravity = -50;
     public float jumpHeight = 2f;
 
@@ -35,7 +36,14 @@ public class PlayerMovement : MonoBehaviour
         //right is the red Axis, foward is the blue axis
         Vector3 move = transform.right * x + transform.forward * z;
 
-        controller.Move(move * speed * Time.deltaTime);
+        // Çapraz hareket hýzýný düzelt
+        if (move.magnitude > 1.0f)
+        {
+            move = move.normalized;
+        }
+
+        float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : speed;
+        controller.Move(move * currentSpeed * Time.deltaTime);
 
         //check if the player is on the ground so he can jump
         if (Input.GetButtonDown("Jump") && isGrounded)
