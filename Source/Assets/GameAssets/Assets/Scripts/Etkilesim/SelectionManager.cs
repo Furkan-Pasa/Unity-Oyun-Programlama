@@ -9,6 +9,8 @@ public class SelectionManager : MonoBehaviour
 {
 
     public GameObject interaction_Info_UI;
+    // Mesafe için
+    public float maxDistance = 2f;
     //Text interaction_text;
     TextMeshProUGUI interaction_text;
 
@@ -22,7 +24,7 @@ public class SelectionManager : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit, maxDistance))
         {
             var selectionTransform = hit.transform;
 
