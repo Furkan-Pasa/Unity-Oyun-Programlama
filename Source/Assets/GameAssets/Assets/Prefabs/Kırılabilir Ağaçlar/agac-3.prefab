@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33313641749024866}
   - component: {fileID: 23205945808381882}
   - component: {fileID: 7824411063122152788}
+  - component: {fileID: -3515662571254989855}
   m_Layer: 0
   m_Name: agac-3
   m_TagString: Agaclar
@@ -109,3 +110,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 7dca68918011bd644a4dc268eea79b44, type: 3}
+--- !u!114 &-3515662571254989855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458573784885960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00b96614e0c2904fbc05e3b0ae30c21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemName: "A\u011Fac\u0131 Kes"
