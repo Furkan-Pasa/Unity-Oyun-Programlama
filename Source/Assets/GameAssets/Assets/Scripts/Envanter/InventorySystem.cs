@@ -11,7 +11,6 @@ public class InventorySystem : MonoBehaviour
     public GameObject inventoryScreenUI;
     public bool isOpen;
 
-
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -24,29 +23,44 @@ public class InventorySystem : MonoBehaviour
         }
     }
 
-
     void Start()
     {
         isOpen = false;
+        inventoryScreenUI.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
     }
-
 
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.I) && !isOpen)
+        // O tuþu - Sadece envanter aç/kapa
+        if (Input.GetKeyDown(KeyCode.O))
         {
-
-            Debug.Log("i is pressed");
-            inventoryScreenUI.SetActive(true);
-            isOpen = true;
-
+            ToggleInventory();
         }
-        else if (Input.GetKeyDown(KeyCode.I) && isOpen)
+
+        // Fare tekerleði - Sadece mouse kilidi aç/kapa
+        if (Input.GetKeyDown(KeyCode.Mouse2))
         {
-            inventoryScreenUI.SetActive(false);
-            isOpen = false;
+            ToggleMouseLock();
+        }
+
+        // I tuþu - Her ikisini de yap
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            ToggleInventory();
+            ToggleMouseLock();
         }
     }
 
+    private void ToggleInventory()
+    {
+        isOpen = !isOpen;
+        inventoryScreenUI.SetActive(isOpen);
+    }
+
+    private void ToggleMouseLock()
+    {
+        Cursor.lockState = Cursor.lockState == CursorLockMode.Locked ?
+            CursorLockMode.None : CursorLockMode.Locked;
+    }
 }
