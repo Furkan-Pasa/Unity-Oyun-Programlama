@@ -122,4 +122,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00b96614e0c2904fbc05e3b0ae30c21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionDistance: 1
   ItemName: "A\u011Fac\u0131 Kes"

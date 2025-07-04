@@ -9,6 +9,8 @@ public class SelectionManager : MonoBehaviour
 {
     public static SelectionManager Instance { get; set; }
 
+    public InteractableObject selectedObject;
+
     public bool onTarget;
 
     public GameObject interaction_Info_UI;
@@ -37,29 +39,38 @@ public class SelectionManager : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
+
         if (Physics.Raycast(ray, out hit))
         {
             var selectionTransform = hit.transform;
 
             InteractableObject interactable = selectionTransform.GetComponent<InteractableObject>();
 
-            if (interactable && interactable.playerInRange)
+            if (interactable != null)
             {
-                onTarget = true;
+                float distanceToObject = hit.distance;
 
-                interaction_text.text = interactable.GetItemName();
-                interaction_Info_UI.SetActive(true);
+                // Mesafe kontrolü
+                if (distanceToObject <= interactable.interactionDistance)
+                {
+                    onTarget = true;
+                    selectedObject = interactable;
+                    interaction_text.text = interactable.GetItemName();
+                    interaction_Info_UI.SetActive(true);
+                }
+                else
+                {
+                    onTarget = false;
+                    selectedObject = null;
+                    interaction_Info_UI.SetActive(false);
+                }
             }
             else
             {
                 onTarget = false;
+                selectedObject = null;
                 interaction_Info_UI.SetActive(false);
             }
-        }
-        else
-        {
-            onTarget = false;
-            interaction_Info_UI.SetActive(false);
         }
     }
 }
