@@ -10,11 +10,12 @@ public class SelectionManager : MonoBehaviour
     public static SelectionManager Instance { get; set; }
 
     public InteractableObject selectedObject;
+    public NPC_Interact selectedNPC;
 
     public bool onTarget;
 
     public GameObject interaction_Info_UI;
-    TextMeshProUGUI interaction_text;  //Text interaction_text;
+    TextMeshProUGUI interaction_text;   //Text interaction_text;
 
     private void Start()
     {
@@ -44,6 +45,7 @@ public class SelectionManager : MonoBehaviour
         {
             var selectionTransform = hit.transform;
 
+            // Önce InteractableObject kontrol et
             InteractableObject interactable = selectionTransform.GetComponent<InteractableObject>();
 
             if (interactable != null)
@@ -55,22 +57,52 @@ public class SelectionManager : MonoBehaviour
                 {
                     onTarget = true;
                     selectedObject = interactable;
+                    selectedNPC = null;  // NPC deðil
                     interaction_text.text = interactable.GetItemName();
                     interaction_Info_UI.SetActive(true);
                 }
                 else
                 {
-                    onTarget = false;
-                    selectedObject = null;
-                    interaction_Info_UI.SetActive(false);
+                    ResetSelection(); 
                 }
             }
             else
             {
-                onTarget = false;
-                selectedObject = null;
-                interaction_Info_UI.SetActive(false);
+                // NPC kontrol et
+                NPC_Interact npc = selectionTransform.GetComponent<NPC_Interact>();
+                if (npc != null)
+                {
+                    float distanceToNPC = hit.distance;
+                    if (distanceToNPC <= npc.interactionDistance)
+                    {
+                        onTarget = true;
+                        selectedObject = null;  // Item deðil
+                        selectedNPC = npc;
+                        interaction_text.text = npc.Get_NPC_Ismi();
+                        interaction_Info_UI.SetActive(true);
+                    }
+                    else
+                    {
+                        ResetSelection();
+                    }
+                }
+                else
+                {
+                    ResetSelection();
+                }
             }
         }
+        else
+        {
+            ResetSelection();
+        }
+    }
+
+    void ResetSelection()
+    {
+        onTarget = false;
+        selectedObject = null;
+        selectedNPC = null;
+        interaction_Info_UI.SetActive(false);
     }
 }
