@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class InventorySystem : MonoBehaviour
 {
-
     public static InventorySystem Instance { get; set; }
 
     public GameObject inventoryScreenUI;
@@ -26,8 +25,7 @@ public class InventorySystem : MonoBehaviour
     void Start()
     {
         isOpen = false;
-        inventoryScreenUI.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
+        inventoryScreenUI.SetActive(isOpen);
     }
 
     void Update()
@@ -60,7 +58,6 @@ public class InventorySystem : MonoBehaviour
 
     private void ToggleMouseLock()
     {
-        Cursor.lockState = Cursor.lockState == CursorLockMode.Locked ?
-            CursorLockMode.None : CursorLockMode.Locked;
+        MouseMovement.Instance.SetMouseLock(!MouseMovement.Instance.isMouseLocked);
     }
 }
