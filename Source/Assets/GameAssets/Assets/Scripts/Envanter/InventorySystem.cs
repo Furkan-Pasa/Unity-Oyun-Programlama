@@ -8,7 +8,8 @@ public class InventorySystem : MonoBehaviour
     public static InventorySystem Instance { get; set; }
 
     public List<GameObject> slotList = new List<GameObject>();
-    public List<string>itemList=new List<string>();
+    public List<string> itemList = new List<string>();
+
 
     public GameObject inventoryScreenUI;
     public bool isOpen;

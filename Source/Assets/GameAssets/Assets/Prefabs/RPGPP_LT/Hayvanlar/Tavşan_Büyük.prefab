@@ -489,9 +489,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDistance: 3
   ItemName: "Anne Tav\u015Fan"
+  sadeceBilgi: 1
   envantereAL: 0
   agaciKes: 0
-  sadeceBilgi: 1
 --- !u!1 &3284256282497586399
 GameObject:
   m_ObjectHideFlags: 0
