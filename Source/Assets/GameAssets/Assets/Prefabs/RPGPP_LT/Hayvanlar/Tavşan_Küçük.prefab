@@ -203,7 +203,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDistance: 3
   ItemName: "Bebek Tav\u015Fan"
-  destroyOnInteraction: 0
+  envantereAL: 0
+  agaciKes: 0
+  sadeceBilgi: 1
 --- !u!1 &886040936537417402
 GameObject:
   m_ObjectHideFlags: 0

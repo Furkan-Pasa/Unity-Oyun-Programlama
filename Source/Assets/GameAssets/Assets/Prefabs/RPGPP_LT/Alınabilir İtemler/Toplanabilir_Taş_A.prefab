@@ -123,4 +123,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDistance: 3
   ItemName: "Ta\u015F\u0131 Al"
-  destroyOnInteraction: 1
+  envantereAL: 1
+  agaciKes: 0
+  sadeceBilgi: 0

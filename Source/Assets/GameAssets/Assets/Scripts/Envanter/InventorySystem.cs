@@ -7,6 +7,9 @@ public class InventorySystem : MonoBehaviour
 {
     public static InventorySystem Instance { get; set; }
 
+    public List<GameObject> slotList = new List<GameObject>();
+    public List<string>itemList=new List<string>();
+
     public GameObject inventoryScreenUI;
     public bool isOpen;
 
@@ -14,7 +17,7 @@ public class InventorySystem : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(gameObject);
+            Destroy(gameObject); Debug.Log("Inventory System Tarafýndan Destroy! " + gameObject);
         }
         else
         {
@@ -35,20 +38,23 @@ public class InventorySystem : MonoBehaviour
         {
             ToggleInventory();
         }
-
         // Fare tekerleði - Sadece mouse kilidi aç/kapa
         if (Input.GetKeyDown(KeyCode.Mouse2))
         {
             ToggleMouseLock();
         }
-
         // I tuþu - Her ikisini de yap
         if (Input.GetKeyDown(KeyCode.I))
         {
             ToggleInventory();
             ToggleMouseLock();
         }
+
+
+
     }
+
+
 
     private void ToggleInventory()
     {

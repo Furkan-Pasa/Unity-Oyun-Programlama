@@ -124,3 +124,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDistance: 1
   ItemName: "A\u011Fac\u0131 Kes"
+  envantereAL: 0
+  agaciKes: 1
+  sadeceBilgi: 0
