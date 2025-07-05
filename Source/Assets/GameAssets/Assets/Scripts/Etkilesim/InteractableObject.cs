@@ -22,9 +22,17 @@ public class InteractableObject : MonoBehaviour
         {
             if (envantereAL)
             {
-                InventorySystem.Instance.AddToInventory(ItemName);
-                Destroy(gameObject);
-                Debug.Log("Item envantere eklendi: " + ItemName);
+                // Eðer envanter dolu deðil ise envantere ekle
+                if (!InventorySystem.Instance.CheckIfFull())
+                {
+                    InventorySystem.Instance.AddToInventory(ItemName);
+                    Destroy(gameObject);
+                    Debug.Log("Item envantere eklendi: " + ItemName);
+                }
+                else
+                {
+                    Debug.Log("Item envanteri dolu! " + ItemName);
+                }
             }
             else if (sadeceBilgi)
             {

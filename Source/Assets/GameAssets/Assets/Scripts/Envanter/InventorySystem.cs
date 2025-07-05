@@ -13,15 +13,16 @@ public class InventorySystem : MonoBehaviour
     public List<string> itemList = new List<string>();
     private GameObject itemToAdd;
     private GameObject whatSlotToEquip;
-    public bool isFull;
-
+    
     public bool isOpen;
+
+    // public bool isFull;  // Belki kullanýlýr
 
     private void Awake()
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(gameObject); Debug.Log("Inventory System Tarafýndan Destroy! " + gameObject);
+            Destroy(gameObject); Debug.Log("Inventory System Tarafýndan Destroy edildi! " + gameObject);
         }
         else
         {
@@ -33,7 +34,6 @@ public class InventorySystem : MonoBehaviour
     {
         // Editörden ne seçiliyse ona göre kapatýp açýcak
         inventoryScreenUI.SetActive(isOpen);
-
         PopulateSlotList();
     }
 
@@ -75,35 +75,48 @@ public class InventorySystem : MonoBehaviour
 
     public void AddToInventory(string ItemName)
     {
-        if (CheckIfFull())
-        {
-            Debug.Log("Envanteri dolu item alýnamadý!");
-        }
-        else
-        {
-            whatSlotToEquip = FindNextEmptySlot();
 
-            itemToAdd = Instantiate(Resources.Load<GameObject>(ItemName), whatSlotToEquip.transform.position, whatSlotToEquip.transform.rotation);
-            itemToAdd.transform.SetParent(whatSlotToEquip.transform);
+        whatSlotToEquip = FindNextEmptySlot();
 
-            itemList.Add(ItemName);
+        itemToAdd = Instantiate(Resources.Load<GameObject>(ItemName), whatSlotToEquip.transform.position, whatSlotToEquip.transform.rotation);
+        itemToAdd.transform.SetParent(whatSlotToEquip.transform);
 
-            
-        }
+        itemList.Add(ItemName);
 
     }
-
 
     private GameObject FindNextEmptySlot()
     {
-
-
-
+        foreach(GameObject slot in slotList)
+        {
+            if (slot.transform.childCount==0)
+            {
+                return slot;
+            }
+        }
+        return new GameObject();
     }
 
-    private bool CheckIfFull()
+    public bool CheckIfFull()
     {
-        throw new NotImplementedException();
+        int counter = 0;
+
+        foreach (GameObject slot in slotList)
+        {
+            if (slot.transform.childCount>0)
+            {
+                counter += 1;
+            }
+        }
+
+        if (counter == 9)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
 
