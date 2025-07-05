@@ -6,6 +6,7 @@ public class InteractableObject : MonoBehaviour
 {
     public float interactionDistance = 3f;
     public string ItemName;
+    public bool destroyOnInteraction = true; // Sadece info göstermek için false
 
     public string GetItemName()
     {
@@ -16,8 +17,15 @@ public class InteractableObject : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0) && SelectionManager.Instance.onTarget && SelectionManager.Instance.selectedObject == this)
         {
-            Debug.Log("Item envantere eklendi");
-            Destroy(gameObject);
+            if (destroyOnInteraction)
+            {
+                Debug.Log("Item envantere eklendi");
+                Destroy(gameObject);
+            }
+            else
+            {
+                Debug.Log("Obje ile etkileþim: " + ItemName);
+            }
         }
     }
 
