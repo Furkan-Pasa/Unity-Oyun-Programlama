@@ -22,8 +22,9 @@ public class InteractableObject : MonoBehaviour
         {
             if (envantereAL)
             {
-                Debug.Log("Item envantere eklendi: " + ItemName);
+                InventorySystem.Instance.AddToInventory(ItemName);
                 Destroy(gameObject);
+                Debug.Log("Item envantere eklendi: " + ItemName);
             }
             else if (sadeceBilgi)
             {

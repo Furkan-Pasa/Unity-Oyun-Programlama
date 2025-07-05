@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Agaclar
+  - Slot
   layers:
   - Default
   - TransparentFX
