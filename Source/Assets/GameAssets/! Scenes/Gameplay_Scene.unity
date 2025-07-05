@@ -15240,7 +15240,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1086904742}
-  - component: {fileID: 1086904743}
   m_Layer: 5
   m_Name: CraftSystem
   m_TagString: Untagged
@@ -15267,21 +15266,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1086904743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1086904741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37495b5b3cf1ceb499e35c1976435433, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  craftingScreenUI: {fileID: 410674144}
-  tradeScreenUI: {fileID: 0}
-  toolsScreenUI: {fileID: 0}
 --- !u!1001 &1088310151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28482,6 +28466,7 @@ GameObject:
   - component: {fileID: 2017410960}
   - component: {fileID: 2017410959}
   - component: {fileID: 2017410958}
+  - component: {fileID: 2017410961}
   - component: {fileID: 2017410957}
   m_Layer: 5
   m_Name: "\xDCretim_Exit_Button"
@@ -28499,15 +28484,15 @@ RectTransform:
   m_GameObject: {fileID: 2017410955}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6304967892555818236}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 98.70009, y: -108.60002}
-  m_SizeDelta: {x: 400, y: 257}
+  m_AnchoredPosition: {x: 100, y: -108.60002}
+  m_SizeDelta: {x: 120, y: 77.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &2017410957
 Animator:
@@ -28574,19 +28559,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2017410959}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11500000, guid: d837d4571fd37b14a822b068d748782f, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2017410959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28625,6 +28598,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2017410955}
   m_CullTransparentMesh: 1
+--- !u!114 &2017410961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017410955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d837d4571fd37b14a822b068d748782f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2021004308
 GameObject:
   m_ObjectHideFlags: 0
@@ -30503,19 +30488,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2096165379103717168}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11500000, guid: d837d4571fd37b14a822b068d748782f, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!224 &2096165379103717170
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30525,15 +30498,15 @@ RectTransform:
   m_GameObject: {fileID: 2096165379103717171}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1887928460112349682}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 105.70006, y: -108.60002}
-  m_SizeDelta: {x: 400, y: 257}
+  m_AnchoredPosition: {x: 100, y: -108.60002}
+  m_SizeDelta: {x: 120, y: 77.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2096165379103717171
 GameObject:
@@ -30547,6 +30520,7 @@ GameObject:
   - component: {fileID: 2096165379103717175}
   - component: {fileID: 2096165379103717168}
   - component: {fileID: 2096165379103717169}
+  - component: {fileID: 4407589927324000145}
   - component: {fileID: 4407589927324000144}
   m_Layer: 5
   m_Name: Takas_Exit_Button
@@ -31295,6 +31269,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4407589927324000145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096165379103717171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d837d4571fd37b14a822b068d748782f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4492343690365693673
 PrefabInstance:
   m_ObjectHideFlags: 0

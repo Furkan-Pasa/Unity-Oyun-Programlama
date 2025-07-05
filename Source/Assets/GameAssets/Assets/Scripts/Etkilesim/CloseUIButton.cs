@@ -21,7 +21,7 @@ void CloseParentUI()
     {
         if (current == null) break;
 
-        if (current.name.Contains("UI"))
+        if (current.CompareTag("UIPanel"))
         {
             current.gameObject.SetActive(false);
             MouseMovement.Instance.SetMouseLock(true);

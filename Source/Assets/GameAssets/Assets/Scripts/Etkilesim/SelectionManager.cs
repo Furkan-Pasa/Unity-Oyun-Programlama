@@ -17,8 +17,13 @@ public class SelectionManager : MonoBehaviour
     public GameObject interaction_Info_UI;
     TextMeshProUGUI interaction_text;   //Text interaction_text;
 
+    private float raycastInterval = 0.1f;  // 0.1 saniyede bir
+    private float nextRaycast = 0f;
+    private Camera mainCamera;             // Camera.main cache'i
+
     private void Start()
     {
+        mainCamera = Camera.main;
         onTarget = false;
         //interaction_text = interaction_Info_UI.GetComponent<Text>();
         interaction_text = interaction_Info_UI.GetComponent<TextMeshProUGUI>();
@@ -38,47 +43,30 @@ public class SelectionManager : MonoBehaviour
 
     void Update()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit))
+        if (Time.time >= nextRaycast)
         {
-            var selectionTransform = hit.transform;
+            nextRaycast = Time.time + raycastInterval;
+            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
 
-            // Önce InteractableObject kontrol et
-            InteractableObject interactable = selectionTransform.GetComponent<InteractableObject>();
-
-            if (interactable != null)
+            if (Physics.Raycast(ray, out hit))
             {
-                float distanceToObject = hit.distance;
+                var selectionTransform = hit.transform;
 
-                // Mesafe kontrolü
-                if (distanceToObject <= interactable.interactionDistance)
+                // Önce InteractableObject kontrol et
+                InteractableObject interactable = selectionTransform.GetComponent<InteractableObject>();
+
+                if (interactable != null)
                 {
-                    onTarget = true;
-                    selectedObject = interactable;
-                    selectedNPC = null;  // NPC deðil
-                    interaction_text.text = interactable.GetItemName();
-                    interaction_Info_UI.SetActive(true);
-                }
-                else
-                {
-                    ResetSelection(); 
-                }
-            }
-            else
-            {
-                // NPC kontrol et
-                NPC_Interact npc = selectionTransform.GetComponent<NPC_Interact>();
-                if (npc != null)
-                {
-                    float distanceToNPC = hit.distance;
-                    if (distanceToNPC <= npc.interactionDistance)
+                    float distanceToObject = hit.distance;
+
+                    // Mesafe kontrolü
+                    if (distanceToObject <= interactable.interactionDistance)
                     {
                         onTarget = true;
-                        selectedObject = null;  // Item deðil
-                        selectedNPC = npc;
-                        interaction_text.text = npc.Get_NPC_Ismi();
+                        selectedObject = interactable;
+                        selectedNPC = null;  // NPC deðil
+                        interaction_text.text = interactable.GetItemName();
                         interaction_Info_UI.SetActive(true);
                     }
                     else
@@ -88,13 +76,34 @@ public class SelectionManager : MonoBehaviour
                 }
                 else
                 {
-                    ResetSelection();
+                    // NPC kontrol et
+                    NPC_Interact npc = selectionTransform.GetComponent<NPC_Interact>();
+                    if (npc != null)
+                    {
+                        float distanceToNPC = hit.distance;
+                        if (distanceToNPC <= npc.interactionDistance)
+                        {
+                            onTarget = true;
+                            selectedObject = null;  // Item deðil
+                            selectedNPC = npc;
+                            interaction_text.text = npc.Get_NPC_Ismi();
+                            interaction_Info_UI.SetActive(true);
+                        }
+                        else
+                        {
+                            ResetSelection();
+                        }
+                    }
+                    else
+                    {
+                        ResetSelection();
+                    }
                 }
             }
-        }
-        else
-        {
-            ResetSelection();
+            else
+            {
+                ResetSelection();
+            }
         }
     }
 

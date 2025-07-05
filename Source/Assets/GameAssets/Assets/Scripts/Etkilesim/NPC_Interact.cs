@@ -21,20 +21,6 @@ public class NPC_Interact : MonoBehaviour
 
     private void Start()
     {
-        //if (takasUI == null)
-        //{
-        //    takasUI = GameObject.Find("Takas_Menüsü_UI");
-        //    if (takasUI == null)
-        //        Debug.LogWarning("Takas_Menüsü_UI bulunamadý!");
-        //}
-
-        //if (üretimUI == null)
-        //{
-        //    üretimUI = GameObject.Find("Üretim_Tezgahý_UI");
-        //    if (üretimUI == null)
-        //        Debug.LogWarning("Üretim_Tezgahý_UI bulunamadý!");
-        //}
-
         // UI'larý baþlangýçta kapat
         if (takasUI != null) takasUI.SetActive(false);
         if (tezgahUI != null) tezgahUI.SetActive(false);
