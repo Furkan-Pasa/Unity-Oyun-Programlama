@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2151222358212699498}
   m_Layer: 0
   m_Name: "A\u011Fa\xE7_01"
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00b96614e0c2904fbc05e3b0ae30c21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionDistance: 1
+  interactionDistance: 2
   ItemName: "A\u011Fac\u0131 Kes"
   interactionMessage: "A\u011Fac\u0131 kesmek i\xE7in \"Sol Fare\" tu\u015Funa bas\u0131n"
   sadeceBilgi: 0
