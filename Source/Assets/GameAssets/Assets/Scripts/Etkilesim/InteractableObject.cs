@@ -27,7 +27,7 @@ public class InteractableObject : MonoBehaviour
                 {
                     InventorySystem.Instance.AddToInventory(ItemName);
                     Destroy(gameObject);
-                    Debug.Log("Item envantere eklendi: " + ItemName);
+                    // Debug.Log("Item envantere eklendi: " + ItemName);
                 }
                 else
                 {
@@ -36,7 +36,7 @@ public class InteractableObject : MonoBehaviour
             }
             else if (sadeceBilgi)
             {
-                Debug.Log("Sadece bilgi seçili! " + ItemName);
+                // Debug.Log("Sadece bilgi seçili! " + ItemName);
             }
             else
             {
@@ -54,7 +54,7 @@ public class InteractableObject : MonoBehaviour
             }
             else if (sadeceBilgi)
             {
-                Debug.Log("Sadece bilgi seçili! " + ItemName);
+                // Debug.Log("Sadece bilgi seçili! " + ItemName);
             }
             else
             {

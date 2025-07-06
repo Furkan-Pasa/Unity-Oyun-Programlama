@@ -28,8 +28,8 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        // Debug.Log("OnBeginDrag");
 
-        Debug.Log("OnBeginDrag");
         canvasGroup.alpha = .6f;
         //So the ray cast will ignore the item itself.
         canvasGroup.blocksRaycasts = false;
@@ -37,7 +37,6 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         startParent = transform.parent;
         transform.SetParent(transform.root);
         itemBeingDragged = gameObject;
-
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -61,7 +60,7 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
 
         }
 
-        Debug.Log("OnEndDrag");
+        // Debug.Log("OnEndDrag");
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
     }
