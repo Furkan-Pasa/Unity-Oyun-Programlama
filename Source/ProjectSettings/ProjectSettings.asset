@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: "Furkan&Z\xFCleyha"
   productName: "Da\u011Fdan Ka\xE7\u0131\u015F"
-  defaultCursor: {fileID: 0}
+  defaultCursor: {fileID: 2800000, guid: 58d655ff75d68ed47b8177c094cce4c6, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.11320752, g: 0.10519756, b: 0.10720005, a: 1}
   m_ShowUnitySplashScreen: 1
