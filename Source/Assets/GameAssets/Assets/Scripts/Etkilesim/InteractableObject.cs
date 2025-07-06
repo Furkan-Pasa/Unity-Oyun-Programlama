@@ -41,7 +41,7 @@ public class InteractableObject : MonoBehaviour
             }
             else
             {
-                Debug.Log("Yanlýþ Tuþa Basýldý! " + ItemName);
+                // Debug.Log("Yanlýþ Tuþa Basýldý! " + ItemName);
             }
         }
 
@@ -59,7 +59,7 @@ public class InteractableObject : MonoBehaviour
             }
             else
             {
-                Debug.Log("Yanlýþ Tuþa Basýldý! " + ItemName);
+                // Debug.Log("Yanlýþ Tuþa Basýldý! " + ItemName);
             }
         }
 

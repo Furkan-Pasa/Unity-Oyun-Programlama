@@ -86,14 +86,6 @@ public class CraftingManager : MonoBehaviour
             return;
         }
 
-        // Envanter dolu mu kontrol et
-        /*  if (InventorySystem.Instance.CheckIfFull())
-            {
-                Debug.Log("Envanter dolu!");
-                return;
-            }
-        */
-
         // Net item deðiþikliðini hesapla
         int requiredCount = 0;
         foreach (var required in recipe.requiredItems)
@@ -124,7 +116,7 @@ public class CraftingManager : MonoBehaviour
             InventorySystem.Instance.AddToInventory(recipe.resultItem);
         }
 
-        Debug.Log($"{recipe.resultAmount} adet {recipe.resultItem} üretildi!");
+        // Debug.Log($"{recipe.resultAmount} adet {recipe.resultItem} üretildi!");
 
         // UI'ý güncelle
         UpdateCraftingUI();
