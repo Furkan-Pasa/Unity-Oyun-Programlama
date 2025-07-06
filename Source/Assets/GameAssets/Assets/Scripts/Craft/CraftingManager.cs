@@ -87,13 +87,32 @@ public class CraftingManager : MonoBehaviour
         }
 
         // Envanter dolu mu kontrol et
-        if (InventorySystem.Instance.CheckIfFull())
+        /*  if (InventorySystem.Instance.CheckIfFull())
+            {
+                Debug.Log("Envanter dolu!");
+                return;
+            }
+        */
+
+        // Net item deðiþikliðini hesapla
+        int requiredCount = 0;
+        foreach (var required in recipe.requiredItems)
         {
-            Debug.Log("Envanter dolu!");
+            requiredCount += required.amount;
+        }
+        int resultCount = recipe.resultAmount;
+        int currentItems = InventorySystem.Instance.itemList.Count;
+        int slotCount = InventorySystem.Instance.slotList.Count;
+
+        int finalItemCount = currentItems - requiredCount + resultCount;
+
+        if (finalItemCount > slotCount)
+        {
+            Debug.Log("Envanterde yeterli yer yok!");
             return;
         }
 
-        // Malzemeleri envaterden çýkar
+        // Malzemeleri envanterden çýkar
         foreach (var required in recipe.requiredItems)
         {
             RemoveItemsFromInventory(required.itemName, required.amount);
@@ -115,18 +134,9 @@ public class CraftingManager : MonoBehaviour
     {
         int removed = 0;
 
-        // itemList'ten kaldýr
-        for (int i = InventorySystem.Instance.itemList.Count - 1; i >= 0; i--)
-        {
-            if (InventorySystem.Instance.itemList[i] == itemName && removed < amount)
-            {
-                InventorySystem.Instance.itemList.RemoveAt(i);
-                removed++;
-            }
-        }
+        // Önce slotlardan görsel olarak kaldýr ve hangi slotlar boþaldý kaydet
+        List<GameObject> emptiedSlots = new List<GameObject>();
 
-        // Slotlardan görsel olarak kaldýr
-        removed = 0;
         foreach (GameObject slot in InventorySystem.Instance.slotList)
         {
             if (slot.transform.childCount > 0 && removed < amount)
@@ -134,9 +144,21 @@ public class CraftingManager : MonoBehaviour
                 Transform child = slot.transform.GetChild(0);
                 if (child.name.Contains(itemName))
                 {
-                    Destroy(child.gameObject);
+                    DestroyImmediate(child.gameObject);
+                    emptiedSlots.Add(slot);
                     removed++;
                 }
+            }
+        }
+
+        // itemList'ten kaldýr
+        removed = 0;
+        for (int i = InventorySystem.Instance.itemList.Count - 1; i >= 0; i--)
+        {
+            if (InventorySystem.Instance.itemList[i] == itemName && removed < amount)
+            {
+                InventorySystem.Instance.itemList.RemoveAt(i);
+                removed++;
             }
         }
     }

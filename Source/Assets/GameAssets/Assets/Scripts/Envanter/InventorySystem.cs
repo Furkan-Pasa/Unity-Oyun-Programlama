@@ -75,26 +75,31 @@ public class InventorySystem : MonoBehaviour
 
     public void AddToInventory(string ItemName)
     {
-
         whatSlotToEquip = FindNextEmptySlot();
+
+        // Boþ slot bulunamadýysa null check yap
+        if (whatSlotToEquip == null || whatSlotToEquip.name == "")
+        {
+            Debug.LogError("Boþ slot bulunamadý!");
+            return;
+        }
 
         itemToAdd = Instantiate(Resources.Load<GameObject>(ItemName), whatSlotToEquip.transform.position, whatSlotToEquip.transform.rotation);
         itemToAdd.transform.SetParent(whatSlotToEquip.transform);
 
         itemList.Add(ItemName);
-
     }
 
     private GameObject FindNextEmptySlot()
     {
-        foreach(GameObject slot in slotList)
+        foreach (GameObject slot in slotList)
         {
-            if (slot.transform.childCount==0)
+            if (slot.transform.childCount == 0)
             {
                 return slot;
             }
         }
-        return new GameObject();
+        return null; // new GameObject() yerine null döndür
     }
 
     public bool CheckIfFull()
