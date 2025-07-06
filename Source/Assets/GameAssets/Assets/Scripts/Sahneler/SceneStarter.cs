@@ -5,12 +5,17 @@ public class SceneStarter : MonoBehaviour
 {
     IEnumerator Start()
     {
-        // 1 frame bekle (sistemlerin hazýr olmasý için)
-        yield return null;
+        // FadeManager'ýn hazýr olmasýný bekle
+        yield return new WaitUntil(() => FadeManager.Instance != null);
 
-        if (FadeManager.Instance != null)
+        // Eðer ekran kararýksa aç
+        if (FadeManager.Instance.IsScreenDark())
         {
-            // Fade-in efekti
+            yield return FadeManager.Instance.StartCoroutine(FadeManager.Instance.FadeIn());
+        }
+        else
+        {
+            // Ekran zaten aydýnlýksa direkt fade-in yap
             yield return FadeManager.Instance.StartCoroutine(FadeManager.Instance.FadeIn());
         }
 

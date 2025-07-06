@@ -1200,7 +1200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7620824269988445973, guid: 5529cd024323ee443a6a183aa71540b9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnNewGameClicked
+      value: OnContinueClicked
       objectReference: {fileID: 0}
     - target: {fileID: 7620824269988445973, guid: 5529cd024323ee443a6a183aa71540b9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -1730,8 +1730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f91ba448cf90ed9408d691d192be92f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadePanel: {fileID: 479566687}
-  fadeSpeed: 1
+  fadeSpeed: 2
 --- !u!1 &1432382455
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,7 +1924,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 740aff14cb4d21b48b0150acfeea1de6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b464ee8350ce3984aa31ea54d12d9236, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
