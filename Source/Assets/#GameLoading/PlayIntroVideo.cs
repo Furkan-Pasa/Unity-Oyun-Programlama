@@ -11,6 +11,10 @@ public class PlayIntroVideo : MonoBehaviour
 
     void Start()
     {
+        // Fare imlecini baþlangýçta gizle ve kilitle
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
         videoPlayer.targetTexture = new RenderTexture(Screen.width, Screen.height, 0);
         rawImage.texture = videoPlayer.targetTexture;
         videoPlayer.Play();
@@ -21,6 +25,23 @@ public class PlayIntroVideo : MonoBehaviour
 
     void OnVideoEnd(VideoPlayer vp)
     {
+        // Fare imlecini tekrar göster ve kilidi aç
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
         SceneManager.LoadScene(nextScene);
     }
+
+    void OnDestroy()
+    {
+        // Script destroy edilirken temizlik yap
+        videoPlayer.loopPointReached -= OnVideoEnd;
+    }
+
+    void OnApplicationQuit()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
 }
