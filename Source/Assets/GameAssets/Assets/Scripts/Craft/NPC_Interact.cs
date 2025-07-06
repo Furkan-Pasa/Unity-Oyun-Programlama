@@ -4,19 +4,26 @@ using UnityEngine;
 
 public class NPC_Interact : MonoBehaviour
 {
-    public float interactionDistance = 3f;
-    public string NPC_Ismi;
-    public bool Demirci_Takas = false;
-    public bool Üretim_Tezgahý = false;
-    public bool NPC3 = false;
-
     // UI Referanslarý
     public GameObject takasUI;     // Inspector'dan atanacak
     public GameObject tezgahUI;    // Inspector'dan atanacak
 
+    public float interactionDistance = 3f;
+    public bool Demirci_Takas = false;
+    public bool Üretim_Tezgahý = false;
+    public bool NPC3 = false;
+
+    [Tooltip("NPC ile etkileþim yazýsý")]
+    public string NPC_Ismi = "YAZILACAK";
+    public string NPC_Text = "YAZILACAK";
+
     public string Get_NPC_Ismi()
     {
         return NPC_Ismi;
+    }
+    public string Get_NPC_Text()
+    {
+        return NPC_Text;
     }
 
     private void Start()
@@ -44,7 +51,7 @@ public class NPC_Interact : MonoBehaviour
                     CraftingManager.Instance.OnCraftingUIOpened(CraftingType.Demirci);
                 }
 
-                Debug.Log(NPC_Ismi + " ile Etkileþim - Demirci_Takas");
+                // Debug.Log(NPC_Ismi + " ile Etkileþim - Demirci_Takas");
             }
             else if (Üretim_Tezgahý)
             {
@@ -59,11 +66,11 @@ public class NPC_Interact : MonoBehaviour
                     CraftingManager.Instance.OnCraftingUIOpened(CraftingType.UretimTezgahi);
                 }
 
-                Debug.Log(NPC_Ismi + " ile Etkileþim - Üretim_Tezgahý");
+                // Debug.Log(NPC_Ismi + " ile Etkileþim - Üretim_Tezgahý");
             }
             else if (NPC3)
             {
-                Debug.Log(NPC_Ismi + " ile Etkileþim - NPC3");
+                // Debug.Log(NPC_Ismi + " ile Etkileþim - NPC3");
             }
         }
 

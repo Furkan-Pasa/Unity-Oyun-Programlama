@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDistance: 3
   ItemName: Dal
-  interactionMessage: "Dal'\u0131 almak i\xE7in E'ye bas\u0131n"
+  interactionMessage: "Dal\u0131 almak i\xE7in E'ye bas\u0131n"
   sadeceBilgi: 0
   envantereAL: 1
   agaciKes: 0

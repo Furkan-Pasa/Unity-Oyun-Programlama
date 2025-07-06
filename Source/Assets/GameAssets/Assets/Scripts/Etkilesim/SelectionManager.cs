@@ -14,8 +14,11 @@ public class SelectionManager : MonoBehaviour
 
     public bool onTarget;
 
-    public GameObject interaction_Info_UI;
-    TextMeshProUGUI interaction_text;   //Text interaction_text;
+    public GameObject interactionInfoUI_1;
+    public GameObject interactionInfoUI_2;
+
+    TextMeshProUGUI interaction_text;   // Text interaction_text;
+    TextMeshProUGUI interaction_text_2;   // Text interaction_text;
 
     private float raycastInterval = 0.1f;  // 0.1 saniyede bir
     private float nextRaycast = 0f;
@@ -25,8 +28,8 @@ public class SelectionManager : MonoBehaviour
     {
         mainCamera = Camera.main;
         onTarget = false;
-        //interaction_text = interaction_Info_UI.GetComponent<Text>();
-        interaction_text = interaction_Info_UI.GetComponent<TextMeshProUGUI>();
+        interaction_text = interactionInfoUI_1.GetComponent<TextMeshProUGUI>();
+        interaction_text_2 = interactionInfoUI_2.GetComponent<TextMeshProUGUI>();
     }
 
     private void Awake()
@@ -66,8 +69,13 @@ public class SelectionManager : MonoBehaviour
                         onTarget = true;
                         selectedObject = interactable;
                         selectedNPC = null;  // NPC deðil
+
+                        // Item adý ve etkileþim mesajýný ayrý ayrý ata
                         interaction_text.text = interactable.GetItemName();
-                        interaction_Info_UI.SetActive(true);
+                        interaction_text_2.text = interactable.GetInteractionMessage();
+
+                        interactionInfoUI_1.SetActive(true);
+                        interactionInfoUI_2.SetActive(true);
                     }
                     else
                     {
@@ -87,7 +95,9 @@ public class SelectionManager : MonoBehaviour
                             selectedObject = null;  // Item deðil
                             selectedNPC = npc;
                             interaction_text.text = npc.Get_NPC_Ismi();
-                            interaction_Info_UI.SetActive(true);
+                            interaction_text_2.text = npc.Get_NPC_Text();
+                            interactionInfoUI_1.SetActive(true);
+                            interactionInfoUI_2.SetActive(true);
                         }
                         else
                         {
@@ -112,6 +122,7 @@ public class SelectionManager : MonoBehaviour
         onTarget = false;
         selectedObject = null;
         selectedNPC = null;
-        interaction_Info_UI.SetActive(false);
+        interactionInfoUI_1.SetActive(false);
+        interactionInfoUI_2.SetActive(false);
     }
 }

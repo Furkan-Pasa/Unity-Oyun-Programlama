@@ -5,15 +5,16 @@ using UnityEngine;
 public class InteractableObject : MonoBehaviour
 {
     public float interactionDistance = 3f;
-    public string ItemName;
-    public bool sadeceBilgi = false; // True olursa sadece info
+    [Tooltip("Eðer envantere alýnacaksa Resources klasöründe ayný isimde olmalý")]
+    public string ItemName = "YAZILACAK";
+    [Tooltip("Görüntülenecek etkileþim mesajý")]
+    public string interactionMessage = "YAZILACAK";
+    public bool sadeceBilgi = false; // True olursa sadece info ve yazý
     public bool envantereAL = false; // True olursa envantere alýnýr
     public bool agaciKes = false;    // True olursa agac kesilir
 
-    public string GetItemName()
-    {
-        return ItemName;
-    }
+    public string GetItemName() => ItemName;
+    public string GetInteractionMessage() => interactionMessage;
 
     private void Update()
     {
