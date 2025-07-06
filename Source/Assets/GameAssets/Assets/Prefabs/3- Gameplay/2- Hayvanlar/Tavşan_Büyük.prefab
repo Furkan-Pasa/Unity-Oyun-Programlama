@@ -489,6 +489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDistance: 3
   ItemName: "Anne Tav\u015Fan"
+  interactionMessage: "Zarars\u0131z bir hayvan"
   sadeceBilgi: 1
   envantereAL: 0
   agaciKes: 0

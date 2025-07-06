@@ -124,6 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDistance: 3
   ItemName: Odun
+  interactionMessage: "Odunu almak i\xE7in E'ye bas\u0131n"
   sadeceBilgi: 0
   envantereAL: 1
   agaciKes: 0

@@ -124,6 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDistance: 1
   ItemName: "A\u011Fac\u0131 Kes"
+  interactionMessage: "A\u011Fac\u0131 kesmek i\xE7in \"Sol Fare\" tu\u015Funa bas\u0131n"
+  sadeceBilgi: 0
   envantereAL: 0
   agaciKes: 1
-  sadeceBilgi: 0
