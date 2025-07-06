@@ -34,6 +34,16 @@ public class SceneLoader : MonoBehaviour
         // Yeni sahnede SceneStarter otomatik fade-in yapacak
     }
 
+    public void LoadSceneWithPauseReset(string sceneName)
+    {
+        // Oyun duraklatýlmýþsa sýfýrla
+        if (Time.timeScale == 0f)
+        {
+            Time.timeScale = 1f;
+        }
+        LoadScene(sceneName);
+    }
+
     public void QuitGame()
     {
         StartCoroutine(QuitWithFade());
@@ -41,12 +51,15 @@ public class SceneLoader : MonoBehaviour
 
     private IEnumerator QuitWithFade()
     {
+        // Fade out sýrasýnda zaman ölçeðini sýfýrla
+        Time.timeScale = 1f;
+
         yield return StartCoroutine(FadeManager.Instance.FadeOut());
 
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
-            Application.Quit();
+    Application.Quit();
 #endif
     }
 }

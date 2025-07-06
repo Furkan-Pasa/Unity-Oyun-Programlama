@@ -68,7 +68,9 @@ public class FadeManager : MonoBehaviour
         {
             if (fadePanel == null) yield break; // Güvenlik kontrolü
 
-            alpha += Time.deltaTime * fadeSpeed;
+            // eskisi
+            // alpha += Time.deltaTime * fadeSpeed;
+            alpha += Time.unscaledDeltaTime * fadeSpeed;
             fadePanel.color = new Color(0, 0, 0, alpha);
             yield return null;
         }

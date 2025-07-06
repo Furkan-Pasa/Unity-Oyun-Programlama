@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -25,6 +26,15 @@ public class MainMenuManager : MonoBehaviour
     // Settings sahnesinden dönüþ için
     public void OnBackClicked()
     {
+        // Eðer oyun içinden geliyorsa
+        if (SceneManager.GetActiveScene().name == "Gameplay_Scene")
+        {
+            // Oyun duraklatýlmýþsa sýfýrla
+            if (Time.timeScale == 0f)
+            {
+                Time.timeScale = 1f;
+            }
+        }
         SceneLoader.Instance.LoadScene("MainMenu_1");
     }
 }

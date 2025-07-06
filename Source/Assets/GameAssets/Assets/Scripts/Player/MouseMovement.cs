@@ -59,4 +59,23 @@ public class MouseMovement : MonoBehaviour
             playerBody.Rotate(Vector3.up * mouseX);
         }
     }
+
+    // ESC için
+    private void OnEnable()  
+    {
+        // ESC menüsü açýldýðýnda mouse kilidini sýfýrla
+        PauseMenuManager.OnPauseStateChanged += HandlePauseState;
+    }
+    private void OnDisable()
+    {
+        PauseMenuManager.OnPauseStateChanged -= HandlePauseState;
+    }
+    private void HandlePauseState(bool isPaused)
+    {
+        SetMouseLock(!isPaused);
+    }
+
+
+
+
 }
