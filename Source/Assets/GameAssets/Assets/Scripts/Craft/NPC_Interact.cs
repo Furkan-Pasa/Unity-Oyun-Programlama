@@ -36,9 +36,13 @@ public class NPC_Interact : MonoBehaviour
                 // Fare kilidini aç
                 MouseMovement.Instance.SetMouseLock(false);
 
-                // Demirci UI'ýný aç
                 if (takasUI != null)
+                {
+                    // Demirci UI'ýný aç
                     takasUI.SetActive(true);
+                    // CraftingManager'a bildir
+                    CraftingManager.Instance.OnCraftingUIOpened(CraftingType.Demirci);
+                }
 
                 Debug.Log(NPC_Ismi + " ile Etkileþim - Demirci_Takas");
             }
@@ -47,9 +51,13 @@ public class NPC_Interact : MonoBehaviour
                 // Fare kilidini aç
                 MouseMovement.Instance.SetMouseLock(false);
 
-                // Craft UI'ýný aç
                 if (tezgahUI != null)
+                {
+                    // Craft UI'ýný aç
                     tezgahUI.SetActive(true);
+                    // CraftingManager'a bildir
+                    CraftingManager.Instance.OnCraftingUIOpened(CraftingType.UretimTezgahi);
+                }
 
                 Debug.Log(NPC_Ismi + " ile Etkileþim - Üretim_Tezgahý");
             }

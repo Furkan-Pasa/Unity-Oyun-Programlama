@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Agaclar
   - Slot
+  - UIPanel
   layers:
   - Default
   - TransparentFX

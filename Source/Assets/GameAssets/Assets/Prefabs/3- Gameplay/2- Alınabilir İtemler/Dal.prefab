@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionDistance: 3
-  ItemName: "Dal\u0131 Al"
+  ItemName: Dal
   sadeceBilgi: 0
   envantereAL: 1
   agaciKes: 0
