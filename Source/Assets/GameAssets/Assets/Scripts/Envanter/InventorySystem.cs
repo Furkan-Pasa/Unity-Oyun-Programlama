@@ -135,4 +135,20 @@ public class InventorySystem : MonoBehaviour
     {
         MouseMovement.Instance.SetMouseLock(!MouseMovement.Instance.isMouseLocked);
     }
+
+    public void RemoveFromInventory(string itemName)
+    {
+        // itemList'ten kaldýr
+        for (int i = itemList.Count - 1; i >= 0; i--)
+        {
+            if (itemList[i] == itemName)
+            {
+                itemList.RemoveAt(i);
+                break; // Sadece ilk bulduðunu sil
+            }
+        }
+
+        Debug.Log($"{itemName} envanterden silindi. Kalan item sayýsý: {itemList.Count}");
+    }
+
 }
