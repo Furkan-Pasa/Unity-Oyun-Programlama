@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: d4a9b7a67dd6140428fbd99a3883fd7f
+timeCreated: 1556225532
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 28345
+  packageName: Idle MoCap
+  packageVersion: version 1.3
+  assetPath: Assets/Idle MoCap/Floor.prefab
+  uploadId: 307522
