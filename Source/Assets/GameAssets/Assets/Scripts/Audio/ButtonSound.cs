@@ -16,7 +16,14 @@ public class ButtonSound : MonoBehaviour
     {
         if (AudioManager.Instance != null)
         {
+            // Debug ekle
+            Debug.Log($"Button clicked! Clip: {AudioManager.Instance.buttonClick?.name}");
+
             AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClick);
+        }
+        else
+        {
+            Debug.LogError("AudioManager instance not found!");
         }
     }
 }

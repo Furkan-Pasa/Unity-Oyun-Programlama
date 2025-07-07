@@ -3,10 +3,19 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
+    private bool isFirstLoad = true;
     void Start()
     {
-        // Ana menü müziðini çal
-        AudioManager.Instance.PlayMusic(AudioManager.Instance.mainMenuMusic);
+        // AudioManager kontrolü ekleyin
+        if (AudioManager.Instance != null)
+        {
+            // Sadece ilk yüklemede veya Settings'ten dönüþte müziði baþlat
+            if (isFirstLoad || SceneManager.GetActiveScene().name != "Settings_Scene")
+            {
+                AudioManager.Instance.PlayMusic(AudioManager.Instance.mainMenuMusic);
+            }
+            isFirstLoad = false;
+        }
     }
 
     public void OnContinueClicked()
