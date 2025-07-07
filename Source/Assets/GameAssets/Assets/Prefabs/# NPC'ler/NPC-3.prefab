@@ -687,6 +687,7 @@ GameObject:
   - component: {fileID: 8401978950554951192}
   - component: {fileID: 3574581604495222904}
   - component: {fileID: 3330362929993905633}
+  - component: {fileID: 1618549524799926395}
   - component: {fileID: 3244894986073769598}
   m_Layer: 0
   m_Name: NPC-3
@@ -800,6 +801,29 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1582316701236239890, guid: a0d423c5725f53144a2b5af29131b8c2, type: 3}
+--- !u!136 &1618549524799926395
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2224834628610083241}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.14
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!64 &3244894986073769598
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -817,7 +841,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30

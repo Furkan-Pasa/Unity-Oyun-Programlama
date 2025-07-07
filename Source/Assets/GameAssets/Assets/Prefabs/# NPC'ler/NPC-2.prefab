@@ -687,6 +687,7 @@ GameObject:
   - component: {fileID: 1092315930798846190}
   - component: {fileID: 7130565953082073199}
   - component: {fileID: 204864322046893282}
+  - component: {fileID: 5282291536864753305}
   - component: {fileID: 171155281580138805}
   m_Layer: 0
   m_Name: NPC-2
@@ -755,7 +756,7 @@ MonoBehaviour:
   "\xDCretim_Tezgah\u0131": 0
   NPC3: 1
   NPC_Ismi: "B\xFCy\xFCc\xFC Aleyna"
-  NPC_Text: YAZILACAK
+  NPC_Text: "B\xFCy\xFCc\xFC seni fark etmedi, \u015Fansl\u0131s\u0131n. Bug\xFCnl\xFCk..."
 --- !u!64 &7130565953082073199
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -800,6 +801,29 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1582316701236239890, guid: a0d423c5725f53144a2b5af29131b8c2, type: 3}
+--- !u!136 &5282291536864753305
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2224834628610083241}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.14
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!64 &171155281580138805
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -817,7 +841,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
