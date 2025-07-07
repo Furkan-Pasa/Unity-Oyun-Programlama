@@ -3,6 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
+    void Start()
+    {
+        // Ana menü müziðini çal
+        AudioManager.Instance.PlayMusic(AudioManager.Instance.mainMenuMusic);
+    }
+
     public void OnContinueClicked()
     {
         // Continue butonu þu anlýk new game gibi
@@ -15,6 +21,8 @@ public class MainMenuManager : MonoBehaviour
 
     public void OnSettingsClicked()
     {
+        // Ayarlar sahnesinde müziði durdur
+        // AudioManager.Instance.StopMusic();
         SceneLoader.Instance.LoadScene("Settings_Scene");
     }
 

@@ -6,6 +6,10 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
 
+    [Header("Ayak Sesleri")]
+    public float footstepInterval = 0.5f;
+    private float nextFootstepTime;
+
     public float speed = 5f;
     public float runSpeed = 10f;
     public float gravity = -50;
@@ -55,5 +59,26 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+
+
+        // Ayak sesleri
+        if (isGrounded && move.magnitude > 0.1f)
+        {
+            if (Time.time > nextFootstepTime)
+            {
+                PlayFootstepSound();
+                nextFootstepTime = Time.time + footstepInterval;
+            }
+        }
+
     }
+
+    void PlayFootstepSound()
+    {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.footstep);
+        }
+    }
+
 }

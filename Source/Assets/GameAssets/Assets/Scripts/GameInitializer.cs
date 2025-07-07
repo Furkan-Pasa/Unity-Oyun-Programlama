@@ -9,5 +9,8 @@ public class GameInitializer : MonoBehaviour
 
         // Zamaný baþlat
         Time.timeScale = 1f;
+
+        // Oyun müziðini baþlat
+        AudioManager.Instance.PlayMusic(AudioManager.Instance.gameplayMusic);
     }
 }
