@@ -4,7 +4,6 @@
 
 ### Kullanılan Oyun Motoru: Unity 
 
-https://www.youtube.com/watch?v=HRJFdMtk9LQ
+[Force of Down v0.53 Gameplay | No Commentary](https://youtu.be/HRJFdMtk9LQ)
 
-https://www.youtube.com/watch?v=\_VwwWWY4-2U
-
+[Force of Down v0.53 Prosedürel Orman | No Commentary](https://youtu.be/_VwwWWY4-2U)
